@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# I think it would be cool to include the datasets in the repo
+# github might think it's less cool though as they're several gb
+datasets/genre_and_lyrics.csv
+datasets/msd_beatunes_map.cls
+datasets/mxm_dataset.db
