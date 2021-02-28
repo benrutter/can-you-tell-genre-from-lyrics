@@ -31,7 +31,7 @@ genre_and_lyrics['pos'] = genre_and_lyrics['word'].apply(pos_tag_word)
 
 In terms of word usage, the most used noun is 'I' which kinda figures, but it was also cool to see that 'love' is the second most used, especially in country where more that 1 in 500 nouns are the word 'love' (I guess the whole 'every song is a love song' thing is true).
 
-![Bar chart showing use of the word love by genre](https://github.com/benrutter/million-song-dataset-exploration/blob/master/images/love_comparison.png)
+![Bar chart showing use of the word love by genre](https://github.com/benrutter/can-you-tell-genre-from-lyrics/blob/main/images/love_comparison.png)
 
 Other than that, the main thing that stood out was the fact that Hip-Hop seems really different from the other three genres - words like 'shit' and 'yo' are some of the most used nouns (is 'yo' a noun?) for Hip-Hop but are pretty small in the other genres. On the flip side, a lot of the most used words in Country, Rock and Pop, like 'day', 'time' and 'love', are a lot less frequent in Hop-Hop.
 
