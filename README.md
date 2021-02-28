@@ -35,11 +35,11 @@ In terms of word usage, the most used noun is 'I' which kinda figures, but it wa
 
 Other than that, the main thing that stood out was the fact that Hip-Hop seems really different from the other three genres - words like 'shit' and 'yo' are some of the most used nouns (is 'yo' a noun?) for Hip-Hop but are pretty small in the other genres. On the flip side, a lot of the most used words in Country, Rock and Pop, like 'day', 'time' and 'love', are a lot less frequent in Hop-Hop.
 
-![Bar chart showing a selection of the most used nouns by genre](https://github.com/benrutter/million-song-dataset-exploration/blob/master/images/noun_comparison.png)
+![Bar chart showing a selection of the most used nouns by genre](https://github.com/benrutter/can-you-tell-genre-from-lyrics/blob/main/images/noun_comparison.png)
 
 I saw the same kinda thing looking at verbs, but to a lesser extent. Hop-Hop still looks like the outlier, with the other three genres more or less matching exactly in usage of the most frequent verbs.
 
-![Bar chart showing a selection of the most used verbs by genre](https://github.com/benrutter/million-song-dataset-exploration/blob/master/images/verb_comparison.png)
+![Bar chart showing a selection of the most used verbs by genre](https://github.com/benrutter/can-you-tell-genre-from-lyrics/blob/main/images/verb_comparison.png)
 
 I also thought it would be interesting to see which genre uses the 'rarest' nouns (i.e. of all words used, what's the distribution of usage). So I started evaluating counts of words as a total of their word group.
 
@@ -59,11 +59,11 @@ kde = sns.kdeplot(
 )
 ```
 
-![KDE plot of the distribution of noun usage](https://github.com/benrutter/million-song-dataset-exploration/blob/master/images/word_rareness.png)
+![KDE plot of the distribution of noun usage](https://github.com/benrutter/can-you-tell-genre-from-lyrics/blob/main/images/word_rareness.png)
 
 After taking a look through the dataset, I trained up a Naive Bayes and a Support Vector machine model. After training a Support Vector machine on the entire dataset (which takes a really long time) I got really excited by seeing a 75% accuracy rate, then immediately disappointed when I realised the reason for this was just that it was predicting everything was Rock (the most common genre)
 
-![Confusion matrix of the SVM model](https://github.com/benrutter/million-song-dataset-exploration/blob/master/images/svm-confusion-matrix.png)
+![Confusion matrix of the SVM model](https://github.com/benrutter/can-you-tell-genre-from-lyrics/blob/main/images/svm-confusion-matrix.png)
 
 The Naive Bayes model performed ok-ish / surprisingly well and made the correct classification about 60% of the time. That's not a lot but it's better than I expected given that, apart from Hip-Hop, the genre word usage didn't show a lot of difference from a high level comparison. It also did well precision wise rather than just placing everything into the most common category.
 
@@ -75,6 +75,6 @@ nb_model.fit(train_features, train_labels)
 
 The confusion matrix is really cool for this as well- as the cross over points map a lot with what you might expect. Pop, which is a pretty vague genre, gets lumped in with Rock (for all the Coldplay fans) and Country (for all the Swifties) a lot. Rock pretty much only gets confused with Country. And strangely, Country is predicted really accurately.
 
-![Confusion matrix of the NB model](https://github.com/benrutter/million-song-dataset-exploration/blob/master/images/nb-confusino-matrix.png)
+![Confusion matrix of the NB model](https://github.com/benrutter/can-you-tell-genre-from-lyrics/blob/main/images/nb-confusion-matrix.png)
 
 Feel free to check out any of the code which is mainly split out into a couple of Jupyter notebooks, or if you feel like using the POS tagged dataset, without waiting 45 minutes for NLTK to run a positron network on hundreds of thousands of rows, [be my guest](https://ufile.io/2z1tfu5r)!
